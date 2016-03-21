@@ -8,12 +8,8 @@ module StanfordCoreNLPResult
       parse_relationships(lines)
     end
 
-    def token(needle)
-      @sentences.each do |s|
-        s.tokens.each do |t|
-          return t if t.value == needle
-        end
-      end
+    def tokens_from_word(needle)
+      @sentences.flatten.select {|t| t.token == needle}
     end
 
     private

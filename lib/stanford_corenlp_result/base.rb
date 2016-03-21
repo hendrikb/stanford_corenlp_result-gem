@@ -25,7 +25,7 @@ module StanfordCoreNLPResult
         if line.start_with?('Sentence #')
           @sentences << cur_sentence if cur_sentence
           description = line
-          cur_sentence = StanfordCoreNLPResult::Sentence.new([], description, lines[i + 1])
+          cur_sentence = StanfordCoreNLPResult::Sentence.new(description, lines[i + 1])
         end
         cur_sentence << StanfordCoreNLPResult::Token.from_line(line) if line.start_with?('[Text=')
       end

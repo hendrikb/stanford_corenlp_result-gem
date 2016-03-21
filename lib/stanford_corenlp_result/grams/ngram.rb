@@ -13,6 +13,13 @@ module StanfordCoreNLPResult
         false
       end
 
+      def contains_word?(word)
+        @c.each do |c|
+          return true if c.token == word
+        end
+        false
+      end
+
       def to_s
         @c.map(&:token).join(' ')
       end

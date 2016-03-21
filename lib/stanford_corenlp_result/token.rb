@@ -4,7 +4,7 @@ module StanfordCoreNLPResult
     attr_reader :token, :parameters
     def initialize(token, parameters = {})
       @token = token
-      @paramters = parameters
+      @parameters = parameters
     end
 
     def to_s

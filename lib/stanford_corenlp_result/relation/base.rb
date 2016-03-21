@@ -1,14 +1,16 @@
 module StanfordCoreNLPResult
   module Relation
     class Base
-      attr_reader :relation_mention, :entity_mentions
+      attr_reader :relation_mention, :left, :right, :type
       def initialize(relation_mention, entity_mention_left, entity_mention_right)
         @relation_mention = relation_mention
-        @entity_mentions = [entity_mention_left, entity_mention_right]
+        @type = relation_mention.type
+        @left = entity_mention_left
+        @right = entity_mention_right
       end
 
       def to_s
-        "#{@entity_mentions[0].value}(#{@entity_mentions[0].type}) --#{@relation_mention.type}--> #{entity_mentions[1].value}(#{entity_mentions[1].type})"
+        "#{@left.value}(#{@left.type}) --#{@type}--> #{@right.value}(#{@right.type})"
       end
     end
   end

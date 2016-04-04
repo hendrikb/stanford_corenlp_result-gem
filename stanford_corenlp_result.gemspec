@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ['Hendrik Bergunde']
   s.email       = 'hbergunde@gmx.de'
   s.files       = ['lib/stanford_corenlp_result.rb']
-  s.homepage    = 'https://github.com/hendrikb/stanford_corenlp_result'
+  s.homepage    = 'https://github.com/hendrikb/stanford_corenlp_result-gem'
 
   s.add_dependency('nokogiri', ['~> 1.6.7'])
   s.add_dependency('pry', ['~> 0.10.3'])

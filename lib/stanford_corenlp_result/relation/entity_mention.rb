@@ -35,6 +35,10 @@ module StanfordCoreNLPResult
           return string_value.to_i
         end
       end
+
+      def to_s
+        "[#{value} -#{type}-]"
+      end
     end
   end
 end
